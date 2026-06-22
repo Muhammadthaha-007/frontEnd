@@ -6,11 +6,112 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Fashion E-Commerse</title>
 </head>
-<body>
-    <header>
-        <nav>
-            
+<body class="m-0">
+    <header class="fixed ml-0 mt-0 w-full bg-white z-50 p-2.5">
+        <nav class="flex mx-8 justify-between items-center">
+            <div class="flex text-black font-sans text-sm gap-2.5 max-md:hidden">
+                <a href="#" class="text-red-950 underline">WOMEN</a>
+                <a href="#">MEN</a>
+                <a href="#">KIDS</a>
+                <a href="#">LIFE</a>
+            </div>
+            <div class="text-4xl font-serif">
+                <h1>Lystre</h1>
+            </div>
+            <div class="flex justify-between items-center gap-2.5 max-md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+                <div class="flex relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handbag-icon lucide-handbag"><path d="M2.048 18.566A2 2 0 0 0 4 21h16a2 2 0 0 0 1.952-2.434l-2-9A2 2 0 0 0 18 8H6a2 2 0 0 0-1.952 1.566z"/><path d="M8 11V6a4 4 0 0 1 8 0v5"/></svg>
+                    <span class="absolute -top-[5px] -right-2 w-[18px] h-[18px] bg-red-500 text-white rounded-full flex items-center justify-center text-[11px] font-bold">3</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen-icon lucide-user-pen"><path d="M11.5 15H7a4 4 0 0 0-4 4v2"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="7" r="4"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+                <p class="text-black font-sans text-sm">MENU</p>
+            </div>
+            <div class="hidden max-md:flex max-md:flex-row max-md:pr-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+            </div>
         </nav>
+        <div class="hidden max-md:flex max-md:flex-row max-md:pr-2.5 max-md:justify-center max-md:gap-1 max-md:w-full">
+            <a href="#" class="text-[brown] underline">WOMEN</a>
+            <a href="#">MEN</a>
+            <a href="#">KIDS</a>
+            <a href="#">LIFE</a>
+        </div>
     </header>
+    <main class="pt-16 max-md:pt-20">
+        <div class="flex text-black font-sans justify-center bg-gray-200 p-1 text-sm underline w-full">
+            <p>Download The App To Get 10% Off Your First App Order</p>
+        </div>
+        <div class="flex flex-row max-md:flex max-md:flex-col">
+            <div class="grid grid-cols-6 gap-1 w-[62vw] h-[80vh] p-[5px] max-md:grid max-md:grid-cols-6 max-md:w-screen max-md:h-[80vh]">
+                <img src="cr7.png" alt="cr7" class="max-md:hidden col-span-3 bg-gray-200 ">
+                <img src="cr7.png" alt="cr7" class="max-md:col-span-6 col-span-3 bg-gray-200 ">
+                <img src="cr7.png" alt="cr7" class="col-span-2 h-[80%] w-full  object-cover bg-gray-200">
+                <img src="cr7.png" alt="cr7" class="col-span-2 h-[80%] w-full  object-cover bg-gray-200">
+                <img src="cr7.png" alt="cr7" class="col-span-2 h-[80%] w-full  object-cover bg-gray-200">
+            </div>
+            <div class="flex flex-col p-5 max-md:flex max-md:flex-col max-md:p-2.5">
+                <p class="text-xs font-sans opacity-50">NEW SEASON</p>
+                <br>
+                <h1 class="flex flex-wrap max-w-[450px] text-4xl font-serif font-semibold">BRUSHED EXTRA FINE MOHAIR CARDIGAN</h1>
+                <br>
+                <P class="font-bold">$543.00</P>
+                <br>
+                <div class="flex flex-row gap-2.5 text-center items-center">
+                    <p class="opacity-50">or 4 payments of $25.00 by</p>
+                    <h5 class="bg-red-600 p-1">after pay</h5>
+                    <h5 class="bg-red-600 p-1">tamara</h5>
+                </div>
+                <br>
+                <div class="flex items-center content-center gap-2.5">
+                    <h5 class="font-sans">SIZE</h5>
+                    <a href="#" class="underline text-xs opacity-50">VIEW SIZE GUIDE</a>
+                </div>
+                <div class="flex items-center justify-center gap-10 max-md:p-0.5 max-md:text-center max-md:gap-3.5">
+                    <div class="text-center bg-gray-200 p-2.5 opacity-50">XS</div>
+                    <div class="text-center bg-gray-200 p-2.5 opacity-50">S</div>
+                    <div class="text-center bg-gray-200 p-2.5 opacity-100">M</div>
+                    <div class="text-center bg-gray-200 p-2.5 opacity-50">L</div>
+                    <div class="text-center bg-gray-200 p-2.5 opacity-50">XL</div>
+                    <div class="text-center bg-gray-200 p-2.5 opacity-50">XXL</div>
+                </div>
+                <br>
+                <button class="flex items-center justify-center bg-black mt-2.5 text-white gap-3.5 p-2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handbag-icon lucide-handbag"><path d="M2.048 18.566A2 2 0 0 0 4 21h16a2 2 0 0 0 1.952-2.434l-2-9A2 2 0 0 0 18 8H6a2 2 0 0 0-1.952 1.566z"/><path d="M8 11V6a4 4 0 0 1 8 0v5"/></svg>
+                    <p class="font-sans">ADD TO BAG</p>
+                </button>
+                <br>
+                <div class="flex flex-col p-2.5 w-full">
+                    <div class="flex flex-row items-center opacity-60 gap-[5px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-van-icon lucide-van"><path d="M13 6v5a1 1 0 0 0 1 1h6.102a1 1 0 0 1 .712.298l.898.91a1 1 0 0 1 .288.702V17a1 1 0 0 1-1 1h-3"/><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h12c1.1 0 2.1.8 2.4 1.8l1.176 4.2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+                        <p class="font-sans">order now, complimentary express delivery by tue, sep 30..</p>
+                    </div>
+                    <br>
+                    <div class="flex flex-row items-center opacity-60 gap-[5px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg>
+                        <p class="font-sans">order now, complimentary collect in store available.</p>
+                    </div>
+                </div>
+                <br><br>
+                <div class="flex items-center justify-between border-t-[3px] border-solid border-[#e5e5e5] ">
+                    <h5 class="font-sans">PRODUCT DESCRIPTION</h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+                <br>
+                <div class="flex items-center justify-between border-t-[3px] border-solid border-[#e5e5e5]">
+                    <h5 class="font-sans">PRODUCT DETAILS</h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>   
+                </div>
+                <br>
+                <div class="flex items-center justify-between border-t-[3px] border-solid border-[#e5e5e5]">
+                    <h5 class="font-sans">OUR COMMITMENT</h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
 </body>
 </html>
