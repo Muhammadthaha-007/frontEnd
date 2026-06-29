@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bookmarks App</title>
+</head>
+<body class="bg-amber-600">
+    <header class="text-center mt-0 p-4">
+        <h1 class="font-extrabold text-4xl font-serif">Save The BookMarks</h1>
+    </header>
+    <main class="flex flex-col items-center justify-center w-full">
+        <div class="flex flex-col w-96">
+            <label for="title">Title:</label>
+            <input type="text" id="title" placeholder="Enter the Tittle " class="rounded p-1.5">
+            <label for="url">URL:</label>
+            <input type="text" id="url" placeholder="Enter the URL " class="rounded p-1.5">
+            <button id="bt" onclick="addBook()" class="text-white rounded bg-black mt-3.5">ADD TO BOOKMARKS</button>
+        </div>
+        <div class="relative flex flex-col justify-center items-center border-4 border-solid border-black rounded-2xl h-[50vh] w-[60%] mt-7">
+            <h2 class="sticky top-0 text-gray-900 text-xl font-bold">
+                Bookmarks
+            </h2>
+            <center>
+                <div id="emptyMsg">
+                    <p>No Bookmarks!</p>
+                </div>
+            </center>
+            <div id="book" class="flex flex-col pt-0 gap-1 h-full w-full overflow-y-auto">
+            </div>
+        </div>
+    </main>
+    <footer class="text-center mt-10">
+        <p class="font-thin">Developed by Thaha</p>
+    </footer>
+    <script>
+        window.onload = loadBook;
+
+        let editingRow = null;
+        let display = document.getElementById('book')
+        let empty = document.getElementById('emptyMsg')
+
+        function loadBook(){
+            display.innerHTML = "";
+
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+            if (bookmarks.length === 0) {
+                empty.style.display = "block";
+                return;
+            }
+
+            empty.style.display = "none";
+
+            bookmarks.forEach(element => {
+                display.innerHTML += `
+                <div class="bookmark flex flex-row gap-5 items-center justify-around border-b">
+                    <button onclick="editBookmark(this)">Edit</button>
+
+                    <button onclick="deleteBookmark(this)">Delete</button>
+
+                    <p>${element.title}</p>
+                    <p>${element.url}</p>
+
+                    <a href="${element.url}" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                    </a>
+                </div>
+                `;
+                
+            });
+
+        }
+        function addBook(){
+            let title = document.getElementById('title').value;
+            let url = document.getElementById('url').value;
+
+            if (title == "" || url == ""){
+                alert("please enter both Title and URL !");
+                return;
+            }
+
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+            if (editingRow){
+                let oldTitle = editingRow.children[2].innerText;
+
+                let index = bookmarks.findIndex(
+                    element => element.title === oldTitle
+                );
+
+                if (index !== -1){
+                    bookmarks[index] = {
+                        title: title,
+                        url: url
+                    }
+                }
+                localStorage.setItem(
+                    "bookmarks",
+                    JSON.stringify(bookmarks)
+                );
+
+                editingRow = null;
+
+                document.getElementById('bt').innerText = "ADD TO BOOKMARK";
+
+            }else{
+                bookmarks.push({
+                    title: title,
+                    url: url
+                });
+                localStorage.setItem(
+                    "bookmarks",
+                    JSON.stringify(bookmarks)
+                )
+
+            }
+
+            loadBook();
+
+            document.getElementById('title').value = "";
+            document.getElementById('url').value = "";
+        }
+        function editBookmark(btn) {
+            let parent = btn.parentElement;
+
+            let title = parent.children[2].innerText;
+            let url = parent.children[3].innerText;
+
+            document.getElementById('title').value = title;
+            document.getElementById('url').value = url;
+
+            editingRow = parent;
+
+            document.getElementById('bt').innerText = "UPDATE"
+
+        }
+        function deleteBookmark(btn){
+            let parent = btn.parentElement;
+
+            let title = parent.children[2].innerText;
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || []
+
+            bookmarks = bookmarks.filter(element => element.title !== title);
+
+            localStorage.setItem("bookmarks",JSON.stringify(bookmarks));
+
+            parent.remove()
+
+            if (bookmarks.length === 0){
+                empty.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
