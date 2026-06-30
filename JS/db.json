@@ -1,0 +1,15 @@
+{
+  "bookmarks": [
+    {
+      "title": "w3 Schools",
+      "url": "https://www.w3schools.com/js/js_async_fetch.asp",
+      "id": "6E1v42ru4xA"
+    },
+    {
+      "id": "OVTCLep6XX4",
+      "title": "Lucid",
+      "url": "https://lucide.dev/icons/arrow-up-right"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
